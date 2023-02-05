@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import { NFTItem } from "hooks/user/useUserInventory";
 import { GridItem } from "./Item/GridItem";
 
-export type ViewType = "list" | "grid" | "packedGrid";
+export type ViewType = "list" | "grid" | "packedGrid" | "smallGrid";
 
 export type NFTListProps = {
   items: NFTItem[];
@@ -34,7 +34,10 @@ export const NFTList = ({
       height="100%"
       border="thin red solid"
       sx={getSXForViewType(viewType)}>
-      {items && items.map((item: NFTItem) => <GridItem nftItem={item} />)}
+      {items &&
+        items.map((item: NFTItem) => (
+          <GridItem viewType={viewType} nftItem={item} />
+        ))}
       {!isAllDataLoaded && <Button onClick={getNextPage}>Load more</Button>}
     </Box>
   );

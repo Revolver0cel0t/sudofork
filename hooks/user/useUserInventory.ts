@@ -1,18 +1,8 @@
 import { OwnedNftsResponse } from "alchemy-sdk";
 import useActiveWeb3React from "hooks/useActiveWeb3React";
-import { useCallback, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { assetSWRConfig } from "stores/configuration/swr";
 import useSWRInfinite, { SWRInfiniteResponse } from "swr/infinite";
-
-export type NFTProperty = {
-  name: string;
-  value: string;
-};
-
-export type Collection = {
-  name: string;
-  address: string;
-};
 
 export type NFTItem = {
   collectionAddress: string;

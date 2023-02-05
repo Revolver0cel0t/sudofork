@@ -1,14 +1,17 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Image from "components/Image";
+import { ViewType } from "components/NFTList";
 import { NFTItem } from "hooks/user/useUserInventory";
 
 export const GridItem = ({
   nftItem,
   offer,
+  viewType,
 }: {
   nftItem: NFTItem;
   offer?: any;
+  viewType: ViewType;
 }) => {
   return (
     <Box
